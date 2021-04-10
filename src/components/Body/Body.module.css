@@ -1,11 +1,37 @@
 .video {
+  height: 70%; 
+  display: block;
+  margin: 0 auto;
   width: 100%;
-  object-fit: cover;
-  z-index: -1;
+  z-index: -1; 
 }
 
 .videoContainer {
-  width:100%;
-  display: block;
-  scrollbar-color: red;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.adContainer{
+  display: flex;
+  justify-content: space-around;
+}
+
+.advertising {
+  display: flex;
+  justify-content: space-around;
+}
+
+.introduction {
+  position: absolute;
+  top: 18%; 
+  left: 50%; 
+  margin-right: -50%; 
+  transform: translate(-50%, -50%);
+  color: #fff;
+  z-index: 5;
+}
+
+.introduction h1 {
+  font-size: 60px;
+  text-shadow: 3px 3px 2px rgb(50, 50, 50)
 }

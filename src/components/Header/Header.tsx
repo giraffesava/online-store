@@ -7,13 +7,13 @@ function Header() {
   return (
     <div className={classes.header}>
       <div className={classes.logo}>
-        <h1>Sava&apos;s</h1>
+        <a href="/"><h1>Sava&apos;s</h1></a>
       </div>
       <div className={classes.cart}>
-        <p>
-          Cart
-        </p>
-        <img className={classes.cartImg} src={cartImage} alt="cart" />
+        <a href="/">
+          <p>Cart</p>
+          <img className={classes.cartImg} src={cartImage} alt="cart" />
+        </a>
       </div>
     </div>
   );
