@@ -1,0 +1,11 @@
+.video {
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.videoContainer {
+  width:100%;
+  display: block;
+  scrollbar-color: red;
+}
