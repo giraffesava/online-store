@@ -1,5 +1,4 @@
 .video {
-  height: 70%; 
   display: block;
   margin: 0 auto;
   width: 100%;
@@ -33,5 +32,19 @@
 
 .introduction h1 {
   font-size: 60px;
-  text-shadow: 3px 3px 2px rgb(50, 50, 50)
+  text-shadow: 3px 3px 2px rgb(50, 50, 50);
+}
+
+.introduction h2 {
+  font-size: 35px;
+  text-shadow: 3px 3px 2px rgb(50, 50, 50);
+  color: rgb(255, 251, 0);
+  margin-bottom: 5px;
+}
+.introduction span {
+  color: white;
+  background: url(united-states.png) 500px -220px repeat;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
 }

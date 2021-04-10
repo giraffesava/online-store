@@ -10,7 +10,11 @@ function Body() {
         <source src={backgroundVideo} type="video/mp4" />
       </video>
       <div className={classes.introduction}>
-        <h1>DO YOU WANT TO TRAVEL TO THE UNITED STATES?</h1>
+        <h1>
+          DO YOU WANT TO TRAVEL TO
+          <span> THE UNITED STATES</span>
+          ?
+        </h1>
         <h2>CHOOSE ANY OF THESE 3 PROGRAMS BELOW</h2>
       </div>
       <div className={classes.advertising}>
