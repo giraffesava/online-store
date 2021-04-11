@@ -9,6 +9,11 @@
   border-bottom: 5px solid rgb(255, 170, 40);
   justify-content: space-between;
   z-index: 10;
+  opacity:0;
+  transition: 1s;
+  animation: show 2s 1;
+  animation-fill-mode: forwards;
+  animation-delay: 3s;
 }
 
 .logo {
@@ -48,3 +53,14 @@
   padding: 2px;
   transform: scale(1.1);
 }
+
+
+
+@keyframes show{
+  0%{
+  opacity:0;
+  }
+  100% {
+  opacity:1;
+  }
+  }

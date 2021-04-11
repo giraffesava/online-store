@@ -2,7 +2,7 @@
   display: block;
   margin: 0 auto;
   width: 100%;
-  z-index: -1; 
+  z-index: -1;
 }
 
 .videoContainer {
@@ -33,6 +33,11 @@
 .introduction h1 {
   font-size: 60px;
   text-shadow: 3px 3px 2px rgb(50, 50, 50);
+  opacity: 0;
+  transition: 1s;
+  animation: show 2s 1;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
 }
 
 .introduction h2 {
@@ -40,6 +45,11 @@
   text-shadow: 3px 3px 2px rgb(50, 50, 50);
   color: rgb(255, 251, 0);
   margin-bottom: 5px;
+  opacity: 0;
+  transition: 1s;
+  animation: show 2s 1;
+  animation-fill-mode: forwards;
+  animation-delay: 2s;
 }
 .introduction span {
   color: white;
@@ -48,3 +58,12 @@
   -webkit-text-fill-color: transparent;
   text-shadow: none;
 }
+
+@keyframes show{
+  0%{
+  opacity:0;
+  }
+  100% {
+  opacity:1;
+  }
+  }

@@ -14,4 +14,18 @@
 .adContainer {
   display: flex;
   justify-content: space-around;
+  opacity: 0;
+  transition: 0.6s;
+  animation: show 2s 1;
+  animation-fill-mode: forwards;
+  animation-delay: 2.5s;
+}
+
+@keyframes show{
+  0%{
+  opacity:0;
+  }
+  100% {
+  opacity:1;
+  }
 }
