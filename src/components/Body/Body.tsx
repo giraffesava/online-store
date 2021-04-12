@@ -2,6 +2,7 @@ import React from 'react';
 import Ad from '../Ad/Ad';
 import backgroundVideo from './backgroundVideo.mp4';
 import classes from './Body.module.css';
+import { ads } from './ads';
 
 function Body() {
   return (
@@ -18,9 +19,14 @@ function Body() {
         <h2>CHOOSE ANY OF THESE 3 PROGRAMS BELOW</h2>
       </div>
       <div className={classes.advertising}>
-        <Ad description="lallalafdfdfdfdf">Hey</Ad>
-        <Ad description="lallala">Hey</Ad>
-        <Ad description="lallala">Hey</Ad>
+        {ads.map((ad) => (
+          <Ad
+            price={ad.price}
+            description={ad.description}
+            url={ad.url}
+            title={ad.title}
+          />
+        ))}
       </div>
     </div>
   );
