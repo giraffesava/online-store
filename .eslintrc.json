@@ -41,6 +41,9 @@
         "linebreak-style": "off",
         "import/prefer-default-export": "off",
         "react/prop-types": "off",
-        "control-has-associated-label" : "off"
+        "control-has-associated-label" : "off",
+        "no-unused-vars": "off",
+        "no-underscore-dangle": "off",
+        "no-shadow": "off"
     }
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import Ad from '../Ad/Ad';
 import backgroundVideo from './backgroundVideo.mp4';
 import classes from './Body.module.css';
-import { ads } from './ads';
+import { ads } from '../Ad/ads';
 
 function Body() {
   return (

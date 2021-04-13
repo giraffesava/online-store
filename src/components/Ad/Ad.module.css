@@ -39,6 +39,17 @@
   animation-delay: 2.5s;
 }
 
+.buttonsContainter{
+  display: flexbox;
+  flex-direction: row;
+  
+}
+
+.buttonsContainter h3{
+  margin: 0;
+}
+
+
 @keyframes show{
   0%{
   opacity:0;
