@@ -1,4 +1,8 @@
 export {
-  decrementCounter,
-  incrementCounter,
+  decrementTicketsStandard,
+  decrementTicketsPremium,
+  decrementTicketsVip,
+  incrementTicketsStandard,
+  incrementTicketsPremium,
+  incrementTicketsVip,
 } from './ticketsCounter';
