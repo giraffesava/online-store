@@ -11,6 +11,10 @@
   border: 4px solid rgba(253, 157, 12, 0.9);
 }
 
+.ad:hover {
+  transform: scale(1.05);
+}
+
 .ad img {
   width: 100%;
   height: 55%;
@@ -39,14 +43,34 @@
   animation-delay: 2.5s;
 }
 
+.ad h3 {
+  margin: 0;
+}
+
 .buttonsContainter{
-  display: flexbox;
-  flex-direction: row;
-  
+  position: absolute;
+  bottom: 0px;
+  text-align: center;
+  margin: auto
 }
 
 .buttonsContainter h3{
   margin: 0;
+}
+
+.buttonsContainter span {
+  font-size: 40px;
+  margin: 10px;
+}
+
+.price {
+  position: absolute;
+  top: -35px;
+  right: -75px;
+  background-color: rgb(255, 93, 34);
+  border-radius: 20px;
+  padding: 5px;
+  transform: rotate(-20deg);
 }
 
 

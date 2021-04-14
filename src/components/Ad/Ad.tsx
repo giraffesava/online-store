@@ -54,7 +54,7 @@ const Ad:React.FC<Props> = ({
     }
   };
 
-  let ticketsCounter;
+  let ticketsCounter = 0;
   if (title === 'STANDARD') {
     ticketsCounter = standardTickets;
   }
@@ -71,17 +71,19 @@ const Ad:React.FC<Props> = ({
         <h1>{title}</h1>
         <img src={url} alt="USA" />
         <h3>{description}</h3>
-        <h3>
+        <h3 className={classes.price}>
           Price:
           { price}
         </h3>
-        <div className={classes.buttonsContainter}>
-          <h3>
-            Amount of tickets:
-            {` ${ticketsCounter}`}
-          </h3>
-          <Button buttonType="decrement" onClick={decrementTicketsHandler} />
-          <Button buttonType="increment" onClick={incrementTicketsHandler} />
+        <div>
+          <div className={classes.buttonsContainter}>
+            <h3>
+              Amount of tickets:
+            </h3>
+            <Button buttonType="decrement" onClick={decrementTicketsHandler} />
+            <span>{`${ticketsCounter}`}</span>
+            <Button buttonType="increment" onClick={incrementTicketsHandler} />
+          </div>
         </div>
       </div>
     </div>
