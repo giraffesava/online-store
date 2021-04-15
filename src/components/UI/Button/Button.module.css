@@ -16,4 +16,8 @@
   padding: 4px 16px;
 }
 
+.decrement:disabled{
+  cursor: not-allowed
+}
+
 .increment:hover, .decrement:hover {opacity: 1}

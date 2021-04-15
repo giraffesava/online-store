@@ -28,9 +28,9 @@ const ButtonsMenu:React.FC<Props> = ({
 
   return (
     <>
-      <Button buttonType="decrement" onClick={decrementTicketsHandler} title={title} check={!ticketsCounter()} />
+      <Button buttonType="decrement" onClick={decrementTicketsHandler} title={title} check={!ticketsCounter()}>-</Button>
       <span className={classes.span}>{ticketsCounter()}</span>
-      <Button buttonType="increment" onClick={incrementTicketsHandler} title={title} />
+      <Button buttonType="increment" onClick={incrementTicketsHandler} title={title}>+</Button>
     </>
   );
 };

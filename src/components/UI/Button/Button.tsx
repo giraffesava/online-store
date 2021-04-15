@@ -1,8 +1,9 @@
-import React, { FC } from 'react';
+import React, { FC, ReactNode } from 'react';
 import classes from './Button.module.css';
 import { AD_TYPES } from '../../Ad/ads';
 
 interface Props {
+  children: ReactNode
   buttonType: 'increment' | 'decrement',
   onClick?: () => void,
   check?: boolean,
@@ -10,7 +11,7 @@ interface Props {
 }
 
 const Button: FC<Props> = ({
-  buttonType, onClick, title, check,
+  buttonType, onClick, title, check, children,
 }) => (
   <>
     <button
@@ -19,7 +20,7 @@ const Button: FC<Props> = ({
       onClick={onClick}
       disabled={buttonType === 'decrement' && check}
     >
-      {buttonType === 'increment' ? '+' : '-'}
+      {children}
     </button>
   </>
 );
