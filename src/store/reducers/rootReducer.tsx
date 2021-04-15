@@ -1,8 +1,12 @@
 import { combineReducers } from 'redux';
-import ticketsReducer from './ticketsReducer';
+import standardReducer from './standardReducer';
+import premiumReducer from './premiumReducer';
+import vipReducer from './vipReducer';
 
 export const rootReducer = combineReducers({
-  ticketsReducer,
+  standardReducer,
+  premiumReducer,
+  vipReducer,
 });
 
 export type RootState = ReturnType<typeof rootReducer>
