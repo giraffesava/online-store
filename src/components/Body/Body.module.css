@@ -1,13 +1,10 @@
 .video {
-  display: block;
-  margin: 0 auto;
-  width: 100%;
-  height: 20%;
   z-index: -1;
-  position: relative;
-  overflow: hidden;
-  border-bottom: 5px solid rgb(253, 157, 12);
-  overflow: hidden;
+  position: fixed;
+  top: -30%;
+  left: -20%;
+  width: 150%;
+  height: 150%;
 }
 
 .adContainer{
@@ -32,9 +29,10 @@
 
 .introduction h1 {
   font-size: 60px;
-  text-shadow: 3px 3px 2px rgb(50, 50, 50);
+  text-shadow: 4px 4px 2px rgb(50, 50, 50);
   opacity: 0;
   transition: 1s;
+  font-weight: 900;
   animation: show 2s 1;
   animation-fill-mode: forwards;
   animation-delay: 1s;
@@ -44,7 +42,6 @@
   font-size: 35px;
   text-shadow: 3px 3px 2px rgb(50, 50, 50);
   color: rgb(255, 251, 0);
-  margin-bottom: 5px;
   opacity: 0;
   transition: 1s;
   animation: show 2s 1;
@@ -53,7 +50,7 @@
 }
 .introduction span {
   color: white;
-  background: url(united-states.png) 500px -220px repeat;
+  background: url(united-states.png) 400px -215px repeat;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: none;

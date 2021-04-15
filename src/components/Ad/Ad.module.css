@@ -51,16 +51,11 @@
   position: absolute;
   bottom: 0px;
   text-align: center;
-  margin: auto
+  width: 100%;
 }
 
 .buttonsContainter h3{
   margin: 0;
-}
-
-.buttonsContainter span {
-  font-size: 40px;
-  margin: 10px;
 }
 
 .price {

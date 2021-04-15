@@ -1,7 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import classes from './Ad.module.css';
-import Button from '../Button/Button';
 import { AD_TYPES } from './ads';
 import {
   decrementTicketsStandard,
@@ -11,7 +10,7 @@ import {
   incrementTicketsPremium,
   incrementTicketsVip,
 } from '../../store/actions/index';
-import { useTypedSelector } from '../../hooks/useTypedSelector';
+import ButtonsMenu from '../ButtonsMenu/ButtonsMenu';
 
 interface Props {
   title: AD_TYPES,
@@ -23,47 +22,19 @@ interface Props {
 const Ad:React.FC<Props> = ({
   title, description, url, price,
 }) => {
-  const {
-    standardTickets,
-    premiumTickets,
-    vipTickets,
-  } = useTypedSelector((state) => state.ticketsReducer);
-
   const dispatch = useDispatch();
+
   const incrementTicketsHandler = (): void => {
-    if (title === 'STANDARD') {
-      dispatch(incrementTicketsStandard());
-    }
-    if (title === 'PREMIUM') {
-      dispatch(incrementTicketsPremium());
-    }
-    if (title === 'VIP') {
-      dispatch(incrementTicketsVip());
-    }
+    if (title === 'STANDARD') dispatch(incrementTicketsStandard());
+    if (title === 'PREMIUM') dispatch(incrementTicketsPremium());
+    if (title === 'VIP') dispatch(incrementTicketsVip());
   };
 
   const decrementTicketsHandler = (): void => {
-    if (title === 'STANDARD') {
-      dispatch(decrementTicketsStandard());
-    }
-    if (title === 'PREMIUM') {
-      dispatch(decrementTicketsPremium());
-    }
-    if (title === 'VIP') {
-      dispatch(decrementTicketsVip());
-    }
+    if (title === 'STANDARD') dispatch(decrementTicketsStandard());
+    if (title === 'PREMIUM') dispatch(decrementTicketsPremium());
+    if (title === 'VIP') dispatch(decrementTicketsVip());
   };
-
-  let ticketsCounter = 0;
-  if (title === 'STANDARD') {
-    ticketsCounter = standardTickets;
-  }
-  if (title === 'PREMIUM') {
-    ticketsCounter = premiumTickets;
-  }
-  if (title === 'VIP') {
-    ticketsCounter = vipTickets;
-  }
 
   return (
     <div className={classes.adContainer}>
@@ -75,15 +46,15 @@ const Ad:React.FC<Props> = ({
           Price:
           { price}
         </h3>
-        <div>
-          <div className={classes.buttonsContainter}>
-            <h3>
-              Amount of tickets:
-            </h3>
-            <Button buttonType="decrement" onClick={decrementTicketsHandler} />
-            <span>{`${ticketsCounter}`}</span>
-            <Button buttonType="increment" onClick={incrementTicketsHandler} />
-          </div>
+        <div className={classes.buttonsContainter}>
+          <h3>
+            Amount of tickets:
+          </h3>
+          <ButtonsMenu
+            incrementTicketsHandler={incrementTicketsHandler}
+            decrementTicketsHandler={decrementTicketsHandler}
+            title={title}
+          />
         </div>
       </div>
     </div>
