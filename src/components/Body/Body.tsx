@@ -1,4 +1,5 @@
 import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import Ad from '../Ad/Ad';
 import backgroundVideo from './backgroundVideo.mp4';
 import classes from './Body.module.css';
@@ -21,6 +22,7 @@ function Body() {
       <div className={classes.advertising}>
         {ads.map((ad) => (
           <Ad
+            key={uuidv4()}
             price={ad.price}
             description={ad.description}
             url={ad.url}
