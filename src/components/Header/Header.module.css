@@ -2,11 +2,9 @@
   width: 100%;
   position: fixed;
   height: 60px;
-  background-color:rgba(49, 49, 49, 0.85);
+  background-color:rgba(49, 49, 49, 0.7);
   color: white;
   display:flex;
-  border-top: 5px solid rgb(255, 170, 40);
-  border-bottom: 5px solid rgb(255, 170, 40);
   justify-content: space-between;
   z-index: 10;
   opacity:0;
@@ -17,43 +15,46 @@
 }
 
 .logo {
-  margin: 6px 10px 10px 20px;
+  margin: 0 10px 10px 20px;
 }
 
 .logo h1 {
-  margin: 0;
+  margin: -2px;
   font-size: 40px;
+  font-family: 'Shadows Into Light', cursive;
 }
+
 .logo a {
   color: #fff;
   text-decoration: none;
 }
 .cart {
-  margin: 13px 20px 10px 0;
+  margin: 12px 20px 10px 0;
 }
 .cart p {
-  margin: 0;
+  margin: -10px 0 0 0;
   padding: 0;
-  font-size: 30px;
+  font-size: 35px;
 }
-.cart a {
+.cart_button {
   color: #fff;
   text-decoration: none;
   display: flex;
+  padding: 4px;
+  cursor: pointer;
 }
 .cartImg {
-  margin: 0;
-  width: 35px;
+  margin: -5px 0 0 0;
+  width: 33px;
   padding: 0 4px;
 }
 
 .cart:hover {
   background-color:rgb(255, 170, 40);
   border-radius: 20px;
-  padding: 2px;
+  padding: 0px;
   transform: scale(1.1);
 }
-
 
 
 @keyframes show{
