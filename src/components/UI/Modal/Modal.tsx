@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import React from 'react';
+import ReactDOM from 'react-dom';
 import classes from './Modal.module.css';
 import Backdrop from '../Backdrop/Backdrop';
 
@@ -13,7 +14,7 @@ interface Props {
 
 const Modal:React.FC<Props> = ({
   modalhandler, overall, standardTickets, premiumTickets, vipTickets,
-}) => (
+}) => ReactDOM.createPortal((
   <>
     <Backdrop modalhandler={modalhandler} />
     <div className={classes.container}>
@@ -31,6 +32,6 @@ const Modal:React.FC<Props> = ({
       </div>
     </div>
   </>
-);
+), document.getElementById('portal')!);
 
 export default Modal;
