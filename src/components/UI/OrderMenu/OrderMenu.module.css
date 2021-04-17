@@ -1,0 +1,8 @@
+.transcript {
+  background-color: rgb(117, 117, 117);
+  position: absolute;
+  right: 20px;
+  border-radius: 20px;
+  padding: 0 10px;
+  margin: 0;
+}
