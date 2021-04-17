@@ -9,6 +9,7 @@ export const decrementTicketsPremium = () => ({
 export const decrementTicketsVip = () => ({
   type: ActionTypes.DECREMENT_TICKETS_VIP,
 });
+
 export const incrementTicketsStandard = () => ({
   type: ActionTypes.INCREMENT_TICKETS_STANDARD,
 });
@@ -17,4 +18,16 @@ export const incrementTicketsPremium = () => ({
 });
 export const incrementTicketsVip = () => ({
   type: ActionTypes.INCREMENT_TICKETS_VIP,
+});
+
+export const resetTicketsStandard = () => ({
+  type: ActionTypes.RESET_TICKETS_STANDARD,
+});
+
+export const resetTicketsPremium = () => ({
+  type: ActionTypes.RESET_TICKETS_PREMIUM,
+});
+
+export const resetTicketsVip = () => ({
+  type: ActionTypes.RESET_TICKETS_VIP,
 });

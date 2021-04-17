@@ -17,6 +17,11 @@ const premiumReducer = (state = initialStore, action:Action) => {
         ...state,
         premiumTickets: state.premiumTickets - 1,
       };
+    case ActionTypes.RESET_TICKETS_PREMIUM:
+      return {
+        ...state,
+        premiumTickets: 0,
+      };
     default:
       return state;
   }

@@ -17,6 +17,11 @@ const standardReducer = (state = initialStore, action:Action) => {
         ...state,
         vipTickets: state.vipTickets + 1,
       };
+    case ActionTypes.RESET_TICKETS_VIP:
+      return {
+        ...state,
+        vipTickets: 0,
+      };
     default:
       return state;
   }

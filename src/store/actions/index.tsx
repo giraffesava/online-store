@@ -5,4 +5,7 @@ export {
   incrementTicketsStandard,
   incrementTicketsPremium,
   incrementTicketsVip,
+  resetTicketsStandard,
+  resetTicketsPremium,
+  resetTicketsVip,
 } from './ticketsCounter';

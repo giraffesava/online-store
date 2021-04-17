@@ -17,6 +17,11 @@ const standardReducer = (state = initialStore, action:Action) => {
         ...state,
         standardTickets: state.standardTickets - 1,
       };
+    case ActionTypes.RESET_TICKETS_STANDARD:
+      return {
+        ...state,
+        standardTickets: 0,
+      };
     default:
       return state;
   }
