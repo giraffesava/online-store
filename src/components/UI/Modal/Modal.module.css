@@ -4,8 +4,64 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  height: 60%;
+  height: 27em;
   width: 40%;
   background-color: rgb(49, 49, 49);
   color: #fff;
+}
+
+.ticketsMenu{
+  width: 100%;
+}
+
+.ticketsMenu h1 {
+  width: 100%;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.order {
+  font-size: 25px;
+  padding: 0;
+  margin: 10px;
+  border: 3px solid white;
+  padding: 10px 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.order p {
+  margin: 5px 20px 5px 10px;
+}
+
+.formContainer{
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+.formContainer input {
+  padding: 0;
+  margin: 0;
+  width: 250px;
+  font-size: 25px;
+}
+
+.formContainer h3 {
+  display: block;
+  margin: 5px;
+}
+
+.overall{
+  text-align: right;
+  margin: 0 5px;
+}
+.tooltip {
+  display: inline-block;
+}
+.tooltip img {
+  width: 15px;
+  margin: 5px;
+  background: url(./tooltip.svg);
+  vertical-align: bottom;
 }

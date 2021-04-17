@@ -13,11 +13,30 @@
 }
 .decrement {
   background-color: #f4511e;
+  border: none;
+  color: white;
   padding: 4px 16px;
+  text-align: center;
+  font-size: 30px;
+  margin: 4px 2px;
+  opacity: 0.8;
 }
 
-.decrement:disabled{
+.submit {
+  background-color: #50ce29;
+  border: none;
+  color: white;
+  padding: 4px 16px;
+  text-align: center;
+  font-size: 25px;
+  margin: 20px auto;
+  opacity: 0.8;
+  display: block;
+}
+
+.decrement:disabled, .submit:disabled{
+  background-color: grey;
   cursor: not-allowed
 }
 
-.increment:hover, .decrement:hover {opacity: 1}
+.increment:hover, .decrement:hover, .submit:hover {opacity: 1; transform: scale(1.1);}
