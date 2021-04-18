@@ -20,6 +20,13 @@
   text-align: center;
 }
 
+.chooseTitle {
+  font-size: 40px;
+  text-align: center;
+  color: rgb(206, 80, 80);
+  font-weight: 900;
+}
+
 .order {
   font-size: 25px;
   padding: 0;
@@ -50,18 +57,4 @@
 .formContainer h3 {
   display: block;
   margin: 5px;
-}
-
-.overall{
-  text-align: right;
-  margin: 0 5px;
-}
-.tooltip {
-  display: inline-block;
-}
-.tooltip img {
-  width: 15px;
-  margin: 5px;
-  background: url(./tooltip.svg);
-  vertical-align: bottom;
 }
