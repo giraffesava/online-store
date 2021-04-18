@@ -1,0 +1,14 @@
+.tooltip {
+  display: inline-block;
+}
+.tooltip img {
+  width: 15px;
+  margin: 5px;
+  background: url(./tooltip.svg);
+  vertical-align: bottom;
+}
+
+.overall{
+  text-align: right;
+  margin: 0 10px;
+}
