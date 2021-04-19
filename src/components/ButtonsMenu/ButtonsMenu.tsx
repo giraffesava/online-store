@@ -1,8 +1,9 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import Button from '../UI/Button/Button';
-import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { AD_TYPES } from '../Ad/ads';
 import classes from './ButtonsMenu.module.css';
+import { selectStandardTicketCount, selectPremiumTicketCount, selectVipTicketCount } from '../../store/tickets/tickets.selectors';
 
 interface Props {
   title: AD_TYPES
@@ -15,14 +16,15 @@ const ButtonsMenu:React.FC<Props> = ({
   decrementTicketsHandler,
   incrementTicketsHandler,
 }) => {
-  const { standardTickets } = useTypedSelector((state) => state.standardReducer);
-  const { premiumTickets } = useTypedSelector((state) => state.premiumReducer);
-  const { vipTickets } = useTypedSelector((state) => state.vipReducer);
+  const standardCount = useSelector(selectStandardTicketCount);
+  const premiumCount = useSelector(selectPremiumTicketCount);
+  const vipCount = useSelector(selectVipTicketCount);
+  console.log(standardCount);
 
-  const ticketsCounter = ():number => {
-    if (title === 'STANDARD') return standardTickets;
-    if (title === 'PREMIUM') return premiumTickets;
-    if (title === 'VIP') return vipTickets;
+  const ticketsCounter = ():any => {
+    if (title === 'STANDARD') return standardCount;
+    if (title === 'PREMIUM') return premiumCount;
+    if (title === 'VIP') return vipCount;
     return 0;
   };
 

@@ -1,16 +1,17 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/interactive-supports-focus */
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import classes from './Header.module.css';
 import cartImage from './cart.svg';
 import Modal from '../UI/Modal/Modal';
-import { useTypedSelector } from '../../hooks/useTypedSelector';
+import { selectStandardTicketCount, selectPremiumTicketCount, selectVipTicketCount } from '../../store/tickets/tickets.selectors';
 
 function Header() {
   const [modal, setModal] = useState(false);
 
-  const { standardTickets } = useTypedSelector((state) => state.standardReducer);
-  const { premiumTickets } = useTypedSelector((state) => state.premiumReducer);
-  const { vipTickets } = useTypedSelector((state) => state.vipReducer);
+  const standardTickets = useSelector(selectStandardTicketCount);
+  const premiumTickets = useSelector(selectPremiumTicketCount);
+  const vipTickets = useSelector(selectVipTicketCount);
 
   const modalHandler = ():void => {
     setModal((prev) => !prev);

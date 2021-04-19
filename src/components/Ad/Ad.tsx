@@ -2,14 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import classes from './Ad.module.css';
 import { AD_TYPES } from './ads';
-import {
-  decrementTicketsStandard,
-  decrementTicketsPremium,
-  decrementTicketsVip,
-  incrementTicketsStandard,
-  incrementTicketsPremium,
-  incrementTicketsVip,
-} from '../../store/actions/index';
+import { incrementTickets, TicketType, decrementTickets } from '../../store/tickets/tickets.actions';
 import ButtonsMenu from '../ButtonsMenu/ButtonsMenu';
 
 interface Props {
@@ -25,15 +18,15 @@ const Ad:React.FC<Props> = ({
   const dispatch = useDispatch();
 
   const incrementTicketsHandler = (): void => {
-    if (title === 'STANDARD') dispatch(incrementTicketsStandard());
-    if (title === 'PREMIUM') dispatch(incrementTicketsPremium());
-    if (title === 'VIP') dispatch(incrementTicketsVip());
+    if (title === 'STANDARD') dispatch(incrementTickets(TicketType.standard));
+    if (title === 'PREMIUM') dispatch(incrementTickets(TicketType.premium));
+    if (title === 'VIP') dispatch(incrementTickets(TicketType.vip));
   };
 
   const decrementTicketsHandler = (): void => {
-    if (title === 'STANDARD') dispatch(decrementTicketsStandard());
-    if (title === 'PREMIUM') dispatch(decrementTicketsPremium());
-    if (title === 'VIP') dispatch(decrementTicketsVip());
+    if (title === 'STANDARD') dispatch(decrementTickets(TicketType.standard));
+    if (title === 'PREMIUM') dispatch(decrementTickets(TicketType.premium));
+    if (title === 'VIP') dispatch(decrementTickets(TicketType.vip));
   };
 
   return (
