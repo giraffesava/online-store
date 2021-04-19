@@ -1,20 +1,25 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/interactive-supports-focus */
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import classes from './Header.module.css';
 import cartImage from './cart.svg';
 import Modal from '../UI/Modal/Modal';
 import { selectStandardTicketCount, selectPremiumTicketCount, selectVipTicketCount } from '../../store/tickets/tickets.selectors';
+import { modalIsOff, modalIsOn } from '../../store/modal/modal.actions';
+import { selectModal } from '../../store/modal/modal.selector';
 
 function Header() {
-  const [modal, setModal] = useState(false);
-
+  // const [modal, setModal] = useState(false);
+  const dispatch = useDispatch();
   const standardTickets = useSelector(selectStandardTicketCount);
   const premiumTickets = useSelector(selectPremiumTicketCount);
   const vipTickets = useSelector(selectVipTicketCount);
 
+  const modal = useSelector(selectModal);
+
   const modalHandler = ():void => {
-    setModal((prev) => !prev);
+    // setModal((prev) => !prev);
+    dispatch(modalIsOn());
   };
 
   const overall = (standardTickets * 250) + (premiumTickets * 450) + (vipTickets * 850);
@@ -34,9 +39,8 @@ function Header() {
           </div>
         </div>
       </div>
-      {!!modal && (
+      {modal && (
       <Modal
-        modalhandler={modalHandler}
         overall={overall}
         standardTickets={standardTickets}
         premiumTickets={premiumTickets}

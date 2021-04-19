@@ -6,7 +6,6 @@ import OrderMenu from '../OrderMenu/OrderMenu';
 import Form from '../../Form/Form';
 
 interface Props {
-  modalhandler: () => void
   overall: number
   standardTickets: number
   premiumTickets: number
@@ -14,10 +13,10 @@ interface Props {
 }
 
 const Modal:React.FC<Props> = ({
-  modalhandler, overall, standardTickets, premiumTickets, vipTickets,
+  overall, standardTickets, premiumTickets, vipTickets,
 }) => (ReactDOM.createPortal((
   <>
-    <Backdrop modalhandler={modalhandler} />
+    <Backdrop />
     <div className={classes.container}>
       <div className={classes.ticketsMenu}>
         <h1>Your order:</h1>

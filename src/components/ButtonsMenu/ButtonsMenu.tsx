@@ -20,7 +20,7 @@ const ButtonsMenu:React.FC<Props> = ({
   const premiumCount = useSelector(selectPremiumTicketCount);
   const vipCount = useSelector(selectVipTicketCount);
 
-  const ticketsCounter = ():any => {
+  const ticketsCounter = ():number => {
     if (title === 'STANDARD') return standardCount;
     if (title === 'PREMIUM') return premiumCount;
     if (title === 'VIP') return vipCount;
