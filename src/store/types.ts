@@ -1,6 +1,6 @@
 import { TicketType } from './tickets/tickets.actions';
 
-export interface ReduxStore {
+export interface ReduxTicketStore {
     tickets: TicketsStore
 }
 
@@ -14,4 +14,12 @@ export interface TicketsStore {
     [TicketType.vip]: {
         tickets: number,
     }
+}
+
+export interface ReduxModalStore {
+    modal: ModalStore
+}
+
+export interface ModalStore {
+    modalIsOn: boolean
 }
