@@ -1,15 +1,11 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import ReactTooltip from 'react-tooltip';
 import { useDispatch } from 'react-redux';
 import Input from '../UI/Input/Input';
 import Button from '../UI/Button/Button';
-import {
-  resetTicketsStandard,
-  resetTicketsPremium,
-  resetTicketsVip,
-} from '../../store/actions/index';
 import tooltip from './tooltip.svg';
 import classes from './Form.module.css';
+import { resetTickets, TicketType } from '../../store/tickets/tickets.actions';
 
 interface Props {
   overall: number
@@ -22,30 +18,19 @@ const Form:React.FC<Props> = ({ overall }) => {
 
   const dispatch = useDispatch();
 
-  const nameRef = useRef();
-  const emailRef = useRef();
-  const promoRef = useRef();
+  const nameRef: React.RefObject<HTMLInputElement > = useRef(null);
 
-  // useEffect(() => {
-  //   nameRef.current.focus();
-  // }, []);
-
-  // const nameKeyDown = (e: HTMLInputElement | null): void => {
-  //   if (e.key === 'Enter') emailRef.current.focus();
-  //   console.log(e);
-  // };
-
-  // const emailKeyDown = (e: React.SyntheticEvent<HTMLElement>): void => {
-  //   // if (e.key === 'Enter') promoRef.current.focus();
-  // };
-
-  // const submitKeyDown = (e: React.SyntheticEvent<HTMLInputElement>): void => {
-  //   // if (e.key === 'Enter') alert('Our manager will contact with you soon :)');
-  // };
+  useEffect(():void => {
+    nameRef.current?.focus();
+  }, []);
 
   const nameHandler = (e:React.ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value.trimLeft());
   };
+
+  // function isValidEmail(email:string) {
+  //   return /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/.test(email);
+  // }
 
   const emailHandler = (e:React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value.trimLeft());
@@ -57,12 +42,18 @@ const Form:React.FC<Props> = ({ overall }) => {
 
   const submitHandler = (e:React.ChangeEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    dispatch(resetTicketsStandard());
-    dispatch(resetTicketsPremium());
-    dispatch(resetTicketsVip());
+    dispatch(resetTickets(TicketType.standard));
+    dispatch(resetTickets(TicketType.premium));
+    dispatch(resetTickets(TicketType.vip));
     setName('');
     setEmail('');
     setPromo('');
+  };
+
+  const isValidForm = (email:string, name: string):boolean => {
+    const emailTest = /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/.test(email);
+    const nameTest = name.length >= 4;
+    return emailTest && nameTest;
   };
 
   return (
@@ -78,16 +69,15 @@ const Form:React.FC<Props> = ({ overall }) => {
         type="text"
         minLength={4}
         onChange={nameHandler}
-        // ref={nameKeyDown}
+        ref={nameRef}
       />
       <h3>Your email: </h3>
       <Input
         placeholder="Email"
         value={email}
-        type="email"
+        type="text"
         minLength={4}
         onChange={emailHandler}
-        // ref={emailKeyDown}
       />
       <h3>
         Promo
@@ -103,9 +93,8 @@ const Form:React.FC<Props> = ({ overall }) => {
         type="text"
         onChange={promoHandler}
         minLength={0}
-        // ref={submitKeyDown}
       />
-      <Button onClick={submitHandler} check={!(name.length >= 4) || !(email.length >= 4)} buttonType="submit">Submit</Button>
+      <Button onClick={submitHandler} check={!isValidForm(email, name)} buttonType="submit">Submit</Button>
     </form>
   );
 };
