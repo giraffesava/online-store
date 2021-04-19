@@ -44,6 +44,7 @@
         "control-has-associated-label" : "off",
         "no-unused-vars": "off",
         "no-underscore-dangle": "off",
-        "no-shadow": "off"
+        "no-shadow": "off",
+        "max-len": ["error", { "code": 130 }]
     }
 }
