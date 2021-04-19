@@ -10,8 +10,6 @@ export enum TicketType {
     vip = 'vip'
 }
 
-// dispatch(incrementTicket(TicketType.standard)) - будет так
-
 export const incrementTickets = (ticketType: TicketType) => ({
   type: TicketActionTypes.INCREMENT_TICKETS,
   payload: ticketType,

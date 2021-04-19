@@ -1,4 +1,3 @@
-// import { Action } from '../../components/types/types';
 import { TicketsStore } from '../types';
 import { TicketActionTypes, TicketsActions, TicketType } from './tickets.actions';
 
