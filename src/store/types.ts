@@ -4,16 +4,18 @@ export interface ReduxTicketStore {
     tickets: TicketsStore
 }
 
+export interface Ticket {
+    tickets: number,
+    url: string,
+    ticketType: TicketType,
+    price: number,
+    description: string
+}
+
 export interface TicketsStore {
-    [TicketType.standard]: {
-        tickets: number,
-    },
-    [TicketType.premium]: {
-        tickets: number,
-    },
-    [TicketType.vip]: {
-        tickets: number,
-    }
+    [TicketType.standard]: Ticket
+    [TicketType.premium]: Ticket
+    [TicketType.vip]: Ticket
 }
 
 export interface ReduxModalStore {
