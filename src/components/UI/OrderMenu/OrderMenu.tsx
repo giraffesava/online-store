@@ -2,19 +2,19 @@ import React from 'react';
 import classes from './OrderMenu.module.css';
 
 interface Props {
-  ticketType: number,
+  tickets: number,
   price: number,
   children: string
 }
 
-const OrderMenu:React.FC<Props> = ({ ticketType, price, children }):any => (
-  !!ticketType && (
+const OrderMenu:React.FC<Props> = ({ tickets, price, children }):any => (
+  !!tickets && (
   <p>
     {children}
     :
-    {` ${ticketType}`}
-    {ticketType === 1 ? ' ticket' : ' tickets'}
-    <span className={classes.transcript}>{`${ticketType} × ${price}$ = ${ticketType * price}$`}</span>
+    {` ${tickets}`}
+    {tickets === 1 ? ' ticket' : ' tickets'}
+    <span className={classes.transcript}>{`${tickets} × ${price}$ = ${tickets * price}$`}</span>
   </p>
   )
 );

@@ -21,7 +21,7 @@ function Header() {
     dispatch(modalIsOn());
   };
 
-  const overall = (standardTickets * 250) + (premiumTickets * 450) + (vipTickets * 850);
+  const overall = (standardTickets.tickets * 250) + (premiumTickets.tickets * 450) + (vipTickets.tickets * 850);
 
   return (
     <>
@@ -41,9 +41,9 @@ function Header() {
       {modal && (
       <Modal
         overall={overall}
-        standardTickets={standardTickets}
-        premiumTickets={premiumTickets}
-        vipTickets={vipTickets}
+        standardTickets={standardTickets.tickets}
+        premiumTickets={premiumTickets.tickets}
+        vipTickets={vipTickets.tickets}
       />
       )}
     </>

@@ -22,9 +22,9 @@ const Modal:React.FC<Props> = ({
         <h1>Your order:</h1>
         {overall ? (
           <div className={classes.order}>
-            <OrderMenu ticketType={standardTickets} price={250}>Standard</OrderMenu>
-            <OrderMenu ticketType={premiumTickets} price={450}>Standard</OrderMenu>
-            <OrderMenu ticketType={vipTickets} price={850}>Standard</OrderMenu>
+            <OrderMenu tickets={standardTickets} price={250}>Standard</OrderMenu>
+            <OrderMenu tickets={premiumTickets} price={450}>Premium</OrderMenu>
+            <OrderMenu tickets={vipTickets} price={850}>Vip</OrderMenu>
           </div>
         ) : <p className={classes.chooseTitle}>Please choose any program</p>}
         <div className={classes.formContainer}>
