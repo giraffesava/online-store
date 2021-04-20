@@ -4,9 +4,9 @@ interface Props {
   placeholder: string
   value: string
   type: string
-  minLength: number
+  minLength?: number
   onChange: (arg: React.ChangeEvent<HTMLInputElement>) => void
-  ref: React.RefObject<HTMLInputElement>
+  ref?: React.RefObject<HTMLInputElement>
 }
 
 const Input = forwardRef<HTMLInputElement, Props>(({

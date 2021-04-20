@@ -1,16 +1,16 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/interactive-supports-focus */
-import React, { useState } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import classes from './Header.module.css';
 import cartImage from './cart.svg';
 import Modal from '../UI/Modal/Modal';
 import { selectStandardTicketCount, selectPremiumTicketCount, selectVipTicketCount } from '../../store/tickets/tickets.selectors';
-import { modalIsOff, modalIsOn } from '../../store/modal/modal.actions';
+import { modalIsOn } from '../../store/modal/modal.actions';
 import { selectModal } from '../../store/modal/modal.selector';
 
 function Header() {
-  // const [modal, setModal] = useState(false);
   const dispatch = useDispatch();
+
   const standardTickets = useSelector(selectStandardTicketCount);
   const premiumTickets = useSelector(selectPremiumTicketCount);
   const vipTickets = useSelector(selectVipTicketCount);
@@ -18,7 +18,6 @@ function Header() {
   const modal = useSelector(selectModal);
 
   const modalHandler = ():void => {
-    // setModal((prev) => !prev);
     dispatch(modalIsOn());
   };
 

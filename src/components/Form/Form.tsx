@@ -28,10 +28,6 @@ const Form:React.FC<Props> = ({ overall }) => {
     setName(e.target.value.trimLeft());
   };
 
-  // function isValidEmail(email:string) {
-  //   return /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/.test(email);
-  // }
-
   const emailHandler = (e:React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value.trimLeft());
   };
@@ -92,9 +88,8 @@ const Form:React.FC<Props> = ({ overall }) => {
         value={promo}
         type="text"
         onChange={promoHandler}
-        minLength={0}
       />
-      <Button onClick={submitHandler} check={!isValidForm(email, name)} buttonType="submit">Submit</Button>
+      <Button onClick={submitHandler} disabled={!isValidForm(email, name)} buttonType="submit">Submit</Button>
     </form>
   );
 };

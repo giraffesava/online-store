@@ -1,9 +1,10 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import classes from './Ad.module.css';
 import { AD_TYPES } from './ads';
 import { incrementTickets, TicketType, decrementTickets } from '../../store/tickets/tickets.actions';
 import ButtonsMenu from '../ButtonsMenu/ButtonsMenu';
+import { selectStandardTicketCount, selectPremiumTicketCount, selectVipTicketCount } from '../../store/tickets/tickets.selectors';
 
 interface Props {
   title: AD_TYPES,
@@ -17,16 +18,27 @@ const Ad:React.FC<Props> = ({
 }) => {
   const dispatch = useDispatch();
 
+  const standardCount = useSelector(selectStandardTicketCount);
+  const premiumCount = useSelector(selectPremiumTicketCount);
+  const vipCount = useSelector(selectVipTicketCount);
+
   const incrementTicketsHandler = (): void => {
-    if (title === 'STANDARD') dispatch(incrementTickets(TicketType.standard));
-    if (title === 'PREMIUM') dispatch(incrementTickets(TicketType.premium));
-    if (title === 'VIP') dispatch(incrementTickets(TicketType.vip));
+    if (title === AD_TYPES.STANDARD) dispatch(incrementTickets(TicketType.standard));
+    if (title === AD_TYPES.PREMIUM) dispatch(incrementTickets(TicketType.premium));
+    if (title === AD_TYPES.VIP) dispatch(incrementTickets(TicketType.vip));
   };
 
   const decrementTicketsHandler = (): void => {
-    if (title === 'STANDARD') dispatch(decrementTickets(TicketType.standard));
-    if (title === 'PREMIUM') dispatch(decrementTickets(TicketType.premium));
-    if (title === 'VIP') dispatch(decrementTickets(TicketType.vip));
+    if (title === AD_TYPES.STANDARD) dispatch(decrementTickets(TicketType.standard));
+    if (title === AD_TYPES.PREMIUM) dispatch(decrementTickets(TicketType.premium));
+    if (title === AD_TYPES.VIP) dispatch(decrementTickets(TicketType.vip));
+  };
+
+  const ticketsCounter = ():number => {
+    if (title === AD_TYPES.STANDARD) return standardCount;
+    if (title === AD_TYPES.PREMIUM) return premiumCount;
+    if (title === AD_TYPES.VIP) return vipCount;
+    return 0;
   };
 
   return (
@@ -46,7 +58,7 @@ const Ad:React.FC<Props> = ({
           <ButtonsMenu
             incrementTicketsHandler={incrementTicketsHandler}
             decrementTicketsHandler={decrementTicketsHandler}
-            title={title}
+            ticketsCounter={ticketsCounter}
           />
         </div>
       </div>
