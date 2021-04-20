@@ -2,22 +2,3 @@ body {
   margin: 0;
   padding: 0;
 }
-
-/* SCROLLBAR MOZILLA*/
-
-* {
-  scrollbar-width: thin;
-  scrollbar-color: rgb(50, 50, 50) rgb(255, 170, 40) 
-}
-
-/* для Chrome/Edge/Safari */
-*::-webkit-scrollbar {
-  width: 5px;
-}
-*::-webkit-scrollbar-track {
-  background: rgb(255, 170, 40);
-}
-*::-webkit-scrollbar-thumb {
-  background-color: rgba(50, 50, 50, 0.8);
-  border: 1px solid rgb(255, 170, 40)
-}
